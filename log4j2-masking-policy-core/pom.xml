@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>log4j2-masking-policy</artifactId>
+  
+    <name>Log4j2 Masking Policy</name>
+  
+    <parent>
+		<groupId>com.mariocairone</groupId>
+		<artifactId>log4j2-masking-policy-parent</artifactId>
+		 <version>${revision}</version>
+	</parent>
+  
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<jackson.version>2.10.0</jackson.version>
+		<jsonPath.version>2.3.0</jsonPath.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+		  <groupId>com.mariocairone</groupId>
+		  <artifactId>log4j2-masking-policy-api</artifactId>
+		   <version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${jsonPath.version}</version>
+		</dependency>  
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
+			<version>1.5.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>		
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>addlee-repos</id>
+			<name>libs-release-local</name>
+			<url>https://artifactory.devops.eu.addisonleeglobal.net/artifactory/libs-release-local/
+			</url>
+			<layout>maven-2-default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>addlee-repos</id>
+			<name>libs-snapshot-local</name>
+			<url>https://artifactory.devops.eu.addisonleeglobal.net/artifactory/libs-snapshot-local/
+			</url>
+			<layout>maven-2-default</layout>
+		</snapshotRepository>
+	</distributionManagement>	
+	
+	
+</project>

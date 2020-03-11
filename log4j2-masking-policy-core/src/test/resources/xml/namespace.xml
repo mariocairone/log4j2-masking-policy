@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root xmlns:u="http://www.mariocairone.com/user"
+xmlns:f="https://www.mariocairone.com/furniture">
+
+<u:user>
+    <u:username>mario</u:username>
+    <u:password>SecretPassword</u:password>
+</u:user>
+
+<f:table>
+  <f:name>African Coffee Table</f:name>
+  <f:width>80.33</f:width>
+  <f:length>120.00</f:length>
+</f:table>
+
+</root> 
