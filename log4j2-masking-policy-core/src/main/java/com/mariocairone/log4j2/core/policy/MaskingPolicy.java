@@ -18,7 +18,6 @@ import org.apache.logging.log4j.message.ParameterizedMessageFactory;
 
 import com.mariocairone.log4j2.api.data.converters.MessageConverter;
 import com.mariocairone.log4j2.api.data.masker.Masker;
-import com.mariocairone.log4j2.core.policy.model.Converter;
 import com.mariocairone.log4j2.core.policy.model.Converters;
 import com.mariocairone.log4j2.core.policy.model.MaskPolicy;
 
@@ -42,7 +41,6 @@ public class MaskingPolicy implements RewritePolicy {
 			@Required(message ="No MaskPolicy provided for MaskPolicies")
 			final MaskPolicy[] policies,
 			@PluginElement("Converter") 
-			@Required(message ="No MaskPolicy provided for MaskPolicies")
 			final Converters converters
 			
 			) {
@@ -60,9 +58,10 @@ public class MaskingPolicy implements RewritePolicy {
 		}
 
 		this.messageConverters = new ArrayList<>();
-		for (Converter converter : converters.getConverters()) { 			
-			messageConverters.add(MessageConverterFactory.createConverter(converter));		
-		}
+		if(converters != null)
+			converters.getConverters()
+				.stream()
+					.forEach( converter -> messageConverters.add(MessageConverterFactory.createConverter(converter)));
 		
 	}
 
@@ -94,7 +93,6 @@ public class MaskingPolicy implements RewritePolicy {
 	private Message convertAndMaskMessage(Message message){
 		
 		String maskedMessage = mask(message.getFormattedMessage());
-		
 		for(MessageConverter converter: messageConverters) {
 			if(converter.isSupported(message)) {
 				return  converter.convertMessage(message, maskedMessage);

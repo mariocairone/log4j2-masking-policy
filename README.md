@@ -9,7 +9,7 @@ Add the following dependency to the project:
 <dependency>
     <groupId>com.mariocairone</groupId>
     <artifactId>log4j2-masking-policy</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
