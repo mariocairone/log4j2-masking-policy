@@ -34,13 +34,13 @@
 	</scm>
 	
 	<properties>
-		<revision>1.0.0</revision>	
+		<revision>1.0.1</revision>	
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 
-		<log4j2.version>2.13.0</log4j2.version>
+		<log4j2.version>2.13.2</log4j2.version>
 		<flatten-maven-plugin.version>1.1.0</flatten-maven-plugin.version>
 	</properties>
 
